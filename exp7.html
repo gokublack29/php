@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            
+            if (name == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+            
+            if (email == "" || !email.includes("@")) {
+                alert("Please enter a valid email");
+                return false;
+            }
+            
+            if (phone == "" || phone.length < 10) {
+                alert("Please enter a valid phone number");
+                return false;
+            }
+            
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Form Validation</h2>
+    
+    <form onsubmit="return validateForm()">
+        <label>Name:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+        
+        <label>Email:</label><br>
+        <input type="text" id="email" name="email"><br><br>
+        
+        <label>Phone:</label><br>
+        <input type="text" id="phone" name="phone"><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

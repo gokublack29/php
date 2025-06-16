@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Webpage</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 600px; margin: 0 auto; }
+        .button { 
+            background-color: #4CAF50; 
+            color: white; 
+            padding: 10px 20px; 
+            border: none; 
+            cursor: pointer; 
+        }
+        .button:hover { background-color: #45a049; }
+        .content { 
+            padding: 20px; 
+            border: 1px solid #ddd; 
+            margin: 10px 0; 
+        }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Interactive Webpage</h1>
+        
+        <button class="button" onclick="showContent()">Show Content</button>
+        <button class="button" onclick="hideContent()">Hide Content</button>
+        <button class="button" onclick="changeColor()">Change Color</button>
+        
+        <div id="content" class="content">
+            <h3>Dynamic Content</h3>
+            <p>This content can be shown/hidden and styled dynamically!</p>
+            <p id="currentTime">Current time will appear here</p>
+        </div>
+        
+        <script>
+            function showContent() {
+                document.getElementById('content').classList.remove('hidden');
+            }
+            
+            function hideContent() {
+                document.getElementById('content').classList.add('hidden');
+            }
+            
+            function changeColor() {
+                var colors = ['#ffcccc', '#ccffcc', '#ccccff', '#ffffcc'];
+                var randomColor = colors[Math.floor(Math.random() * colors.length)];
+                document.getElementById('content').style.backgroundColor = randomColor;
+            }
+            
+            setInterval(function() {
+                document.getElementById('currentTime').innerHTML = 
+                    'Current time: ' + new Date().toLocaleTimeString();
+            }, 1000);
+        </script>
+    </div>
+</body>
+</html>
+

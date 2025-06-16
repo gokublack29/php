@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Map</title>
+</head>
+<body>
+    <h2>Click the shapes:</h2>
+    
+    <img src="data:image/svg+xml,%3Csvg width='300' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='300' height='200' fill='lightgray'/%3E%3Ccircle cx='75' cy='75' r='40' fill='red'/%3E%3Crect x='150' y='35' width='80' height='80' fill='blue'/%3E%3C/svg%3E" 
+         usemap="#mymap">
+    
+    <map name="mymap">
+        <area shape="circle" coords="75,75,40" onclick="alert('Red Circle clicked!')">
+        <area shape="rect" coords="150,35,230,115" onclick="alert('Blue Square clicked!')">
+    </map>
+    
+    <p>Click on the red circle or blue square above.</p>
+</body>
+</html>
